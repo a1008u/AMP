@@ -1,0 +1,147 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>AMP Story Layouts</title>
+    <meta name="description" content="Get started with amp-story">
+
+    <!-- ## Setup -->
+    <!-- AMP Storiesを利用するために、読み込ませるライブラリ -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="canonical" href="https://amp.dev/documentation/examples/style-layout/amp_story_layouts/index.html">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      amp-story-page {
+        background: white;
+      }
+      .content {
+        background: #b60845;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+        padding: 8px;
+      }
+      </style>
+  </head>
+
+  <body>
+    <amp-story standalone
+      title="Stories in AMP - Layouts"
+      publisher="AMP Project"
+      publisher-logo-src="https://amp.dev/favicons/coast-228x228.png"
+      poster-portrait-src="https://picsum.photos/300/400"
+      poster-square-src="https://picsum.photos/300/300"
+      poster-landscape-src="https://picsum.photos/400/300">
+
+      <!-- ## Fill -->
+
+      <!-- fillレイアウトは、最初の子（div）が使用可能なスペースすべてを占めるようにします。-->
+      <amp-story-page id="fill-template-example-1">
+        <amp-story-grid-layer template="fill">
+          <div class="content">Content</div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- fillレイアウトを使用する場合、画像とビデオの解像度は720 x 1280ピクセルにする必要があります。-->
+      <amp-story-page id="fill-template-example-2">
+        <amp-story-grid-layer template="fill">
+          <amp-img src="https://unsplash.it/720/1280/" width="720" height="1280" layout="responsive"></amp-img>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- ## Vertical -->
+      <!-- The vertical templateは、その要素をy軸に沿って配置します。各要素は必要なだけのスペースを取ります。（verticalの子要素の幅は自動的に調整されている）-->
+      <amp-story-page id="vertical-template-example-1">
+        <amp-story-grid-layer template="vertical">
+          <div class="content">A paragraph</div>
+          <div class="content">A longer paragraph</div>
+          <div class="content">A much longer paragraph</div>
+          <div class="content">A veeeeeeeeeeeeeeeeeeeeeeeeeeeeeery long Paragraph. By far. So very very long. It's actually so long that it spans over multiple lines.</div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- 画面サイズによっては、すべてが1つのストーリーページに収まるとは限りません -->
+      <amp-story-page id="vertical-template-example-2">
+        <amp-story-grid-layer template="vertical">
+          <div class="content">Paragraph 1</div>
+          <div class="content">Paragraph 2</div>
+          <div class="content">Paragraph 3</div>
+          <div class="content">Paragraph 4</div>
+          <div class="content">Paragraph 5</div>
+          <div class="content">Paragraph 6</div>
+          <div class="content">Paragraph 7</div>
+          <div class="content">Paragraph 8</div>
+          <div class="content">Paragraph 9</div>
+          <div class="content">Paragraph 10</div>
+          <div class="content">Paragraph 11</div>
+          <div class="content">Paragraph 12</div>
+          <div class="content">Paragraph 13</div>
+          <div class="content">Paragraph 14</div>
+          <div class="content">Paragraph 15</div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- 内容は各行がどのくらいのスペースを取るかを定義します。. -->
+      <amp-story-page id="vertical-template-example-3">
+        <amp-story-grid-layer template="vertical">
+          <amp-img src="https://unsplash.it/720/640/?image=10"
+            width="720" height="640"
+            layout="responsive"></amp-img>
+          <amp-img src="https://unsplash.it/720/640/?image=11"
+            width="720" height="640"
+            layout="responsive"></amp-img>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+
+      <!-- ## Thirds -->
+      <!-- The thirds template は画面を同じ大きさの3行分割を行う。 -->
+      <amp-story-page id="thirds-template-example-1">
+        <amp-story-grid-layer template="thirds">
+          <div class="content" grid-area="upper-third">Paragraph 1</div>
+          <div class="content" grid-area="middle-third">Paragraph 2</div>
+          <div class="content" grid-area="lower-third">Paragraph 3</div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- 上部3分の1、中3分の1、および下部3分の3のgrid-area属性を使用して、要素を特定のスロットに配置できます。 -->
+      <amp-story-page id="thirds-template-example-2">
+        <amp-story-grid-layer template="thirds">
+          <div class="content" grid-area="middle-third">Middle</div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- ## Horizontal -->
+      <!-- The horizontal templateは、その要素をX軸に沿って配置します。 -->
+      <amp-story-page id="horizontal-template-example-1">
+        <amp-story-grid-layer template="horizontal">
+          <div class="content">Paragraph 1</div>
+          <div class="content">Paragraph 2</div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- デフォルトでは、その要素は行の先頭に揃えられます。  -->
+      <amp-story-page id="horizontal-template-example-2">
+        <amp-story-grid-layer template="horizontal">
+          <div class="content">Paragraph 1</div>
+          <div class="content">Paragraph 2</div>
+          <div class="content">Paragraph 3</div>
+          <div class="content">Paragraph 4</div>
+          <div class="content">Paragraph 5</div>
+          <div class="content">Paragraph 6</div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <amp-story-bookend src="https://amp.dev/json/bookend.json" layout="nodisplay">
+      </amp-story-bookend>
+
+    </amp-story>
+  </body>
+</html>

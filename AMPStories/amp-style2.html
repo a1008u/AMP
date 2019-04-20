@@ -1,0 +1,65 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Desktop and Landscape Mode Support</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <!-- ## Setup -->
+    <!-- AMP Stories are written using AMPHTML and they use their own AMP extension: `amp-story`. The first step is to import the `amp-story` in the header. -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+
+
+    <link rel="canonical" href="https://amp.dev/documentation/examples/style-layout/desktop_and_landscape_mode_support/index.html">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <!-- Stories can be styled using CSS: -->
+    <style amp-custom>
+      amp-story {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI ", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji ", "Segoe UI Emoji ", "Segoe UI Symbol ";
+      }
+      amp-story-page * {
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ## Desktop and landscape support -->
+    <!-- amp-story要素にsupports-landscape属性が指定されている場合、次のようになります。
+    - モバイルデバイスを横向きにしたときにストーリーが見えるようにする
+    - デスクトップエクスペリエンスを没入型フルブリードモードに変更し、デフォルトの3つの縦型パネルエクスペリエンスを置き換えます。
+    利用するにはamp-storyタグにsupports-landscapeをつけましょ。-->
+    <amp-story
+      standalone
+      supports-landscape
+      title="Stories in AMP - Hello World"
+      publisher="AMP Project"
+      publisher-logo-src="https://amp.dev/favicons/coast-228x228.png"
+      poster-portrait-src="https://amp.dev/static/samples/img/story_dog2_portrait.jpg"
+      poster-square-src="https://amp.dev/static/samples/img/story_dog2_square.jpg"
+      poster-landscape-src="https://amp.dev/static/samples/img/story_dog2_landscape.jpg">
+
+      <amp-story-page id="page-1">
+        <amp-story-grid-layer template="fill">
+          <amp-img src="https://amp.dev/static/samples/img/tree-1920x1277.jpg"
+          width="1920" height="1277"
+          layout="responsive"></amp-img>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <amp-story-page id="page-2">
+        <amp-story-grid-layer template="fill">
+          <amp-img src="https://amp.dev/static/samples/img/forest-1920x1280.jpg"
+          width="1920" height="1280"
+          layout="responsive"></amp-img>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <amp-story-bookend src="https://amp.dev/static/samples/json/bookend.json" layout="nodisplay">
+      </amp-story-bookend>
+    </amp-story>
+  </body>
+</html>
