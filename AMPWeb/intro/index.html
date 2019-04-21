@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- This tells everyone that this is an AMP file. `<html amp>` works too. -->
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title> Hello World</title>
+  <!-- AMP SETUP -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+  <!-- AMP HTMLファイルには、通常のHTMLを指す正規のリンクが必要です。 HTMLバージョンが存在しない場合は、それ自体を指す必要があります。 -->
+  <link rel="canonical" href="https://amp.dev/documentation/examples/introduction/hello_world/index.html">
+  
+  <!-- AMP HTMLファイルにはビューポート宣言が必要です。 initial-scale = 1を含めることをお勧めします。-->
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  
+  <!-- CSSはインラインで埋め込む必要があります。-->
+  <style amp-custom>
+    h1 {
+      color: red;
+    }
+  </style>
+
+  <!-- The AMP boilerplate. -->
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+  <!--
+    Most HTML tags can be used directly in AMP HTML.
+  -->
+  <h1>Hello World!</h1>
+
+  <ul>
+    <li>AMP HTMLは完全に既存のWeb技術上に構築されています。</li>
+    <li>HTML、CSS、およびJavaScriptの一部を制限することで、信頼性の高いパフォーマンスを実現します。</li>
+    <li>これらの制限を補うために、AMP HTMLは基本的なHTMLを超えたリッチコンテンツのためのカスタム要素のセットを定義します。</li>
+  </ul>
+  <!--  -->
+  <amp-img src="amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+
+</body>
+</html>

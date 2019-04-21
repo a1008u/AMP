@@ -1,0 +1,44 @@
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="https://amp.dev/documentation/examples/components/amp-3d-gltf/index.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title>amp-3d-gltf</title>
+  <!-- ## Setup amp-3d-gltf` -->
+  <!-- amp-3d-gltfコンポーネントは、glTF形式の3Dモデルを表示します。 -->
+  <script async custom-element="amp-3d-gltf" src="https://cdn.ampproject.org/v0/amp-3d-gltf-0.1.js"></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+
+  <!-- ## Basic Usage -->
+  <!-- Embed 3d model via the `src` attribute. -->
+  <amp-3d-gltf layout="fixed"
+    width="320"
+    height="240"
+    src="/static/samples/glTF/DamagedHelmet.glb"></amp-3d-gltf>
+
+
+  <!-- ## Customization -->
+  <!--
+    You can customize the 3D model using these attributes:
+    * `src` - glTFファイルへのURLを指定する必須属性。
+    * `alpha` - キャンバス上の空き領域が透明かどうかを指定するブール属性。デフォルトでは、空きスペースは黒で埋められています。デフォルト値はfalseです。
+    * `antialiasing` - アンチエイリアスを有効にするかどうかを指定するブール属性。デフォルト値はfalseです。
+    * `maxPixelRatio` - pixelRatioレンダリングオプションの上限を指定する数値。デフォルトはwindow.devicePixelRatioです。
+    * `autoRotate` - モデルの中心を中心にカメラを自動的に回転させるかどうかを指定するブール属性。デフォルト値はfalseです。
+    * `enableZoom` - ズームをオンにするかどうかを指定するブール属性。デフォルト値はtrueです。
+  -->
+  <amp-3d-gltf layout="fixed"
+    width="320"
+    height="240"
+    alpha="true"
+    antialiasing="true"
+    autoRotate="true"
+    enableZoom="false"
+    src="/static/samples/glTF/DamagedHelmet.glb"></amp-3d-gltf>
+
+</body>
+</html>
