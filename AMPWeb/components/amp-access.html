@@ -1,0 +1,82 @@
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title>amp-access</title>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+  <!-- ## Setup -->
+  <!-- `amp-accessにはamp-analyticsもインポートする必要があります -->
+  <script async custom-element="amp-access" src="https://cdn.ampproject.org/v0/amp-access-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+  <!-- オプションで、amp-moustacheコンポーネントを使用して、許可応答から値を置き換えたテキストを表示します。-->
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+
+  <!-- amp-accessコンポーネントは認証と承認のサポートを追加し、AMPページの一部へのアクセスを制限したり、ログインしたユーザー用にカスタマイズされたコンテンツを表示したりできます。
+        authorizationFallbackResponse属性で許可が失敗した場合に使用されるフォールバック応答を作成することもできます。-->
+  <script id="amp-access" type="application/json">
+    {
+        "authorization": "https://ampbyexample.com/components/amp-access/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
+        "pingback": "https://ampbyexample.com/components/amp-access/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
+        "login": {
+          "sign-in": "https://ampbyexample.com/components/amp-access/login?rid=READER_ID&url=CANONICAL_URL",
+          "sign-out": "https://ampbyexample.com/components/amp-access/logout"
+        },
+        "authorizationFallbackResponse": {
+            "error": true,
+            "loggedIn": false,
+            "powerUser": false
+        }
+    }
+  </script>
+  <link rel="canonical" href="https://amp.dev/documentation/examples/components/amp-access/index.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+  <!-- アクセスすると見えるエリア-->
+  <section>
+    Welcome to the website! This section is visible to all.
+  </section>
+
+   <!-- ログイン後の動きは、amp-accessを利用して決定される。この場合はloggedInがtrueの場合に表示される -->
+  <section amp-access="loggedIn">
+    This section is only visible if you're logged in. Welcome back!
+  </section>
+
+  <!-- ログインしていることに加えてpowerUserプロパティが設定されているユーザーを区別します。-->
+  <section amp-access="loggedIn AND powerUser">
+    This section is only visible if you're logged in <em>and</em> classified as "power user".
+  </section>
+
+  <!-- ユーザはログインしていない場合 -->
+  <section amp-access="NOT loggedIn">
+    This section is only visible if you're not logged in.
+  </section>
+
+  <!-- 認証要求から返された情報を表示するには、amp-accessとamp-moustacheを組み合わせます。 -->
+  <section amp-access="loggedIn">
+    <template amp-access-template type="amp-mustache">
+      <h3>Hello {{email}}!</h3>
+
+      {{#powerUser}}
+      <p>You are a power user.</p>
+      {{/powerUser}}
+    </template>
+  </section>
+
+  <!-- ## Login  -->
+  <!-- 要素がクリックされたときにログインダイアログを開く。
+        amp-access-hideは、amp-access式がTRUEに評価された場合に、コンポーネントをデフォルトで非表示にして後で有効にする-->
+  <button amp-access="NOT loggedIn" amp-access-hide on="tap:amp-access.login-sign-in">
+    Login
+  </button>
+
+  <!-- ## Logout  -->
+  <!-- ログアウトは、元のURLに直接リダイレクトするログインアクションです。これには、ページがリロードされずに更新されるという利点があります。 -->
+  <button amp-access="loggedIn" amp-access-hide on="tap:amp-access.login-sign-out">
+    Logout
+  </button>
+</body>
+</html>
