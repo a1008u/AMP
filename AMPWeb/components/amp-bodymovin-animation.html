@@ -1,0 +1,40 @@
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title>amp-bodymovin-animation</title>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- ## Setup(amp-bodymovin-animationの追加) -->
+  <script async custom-element="amp-bodymovin-animation" src="https://cdn.ampproject.org/v0/amp-bodymovin-animation-0.1.js"></script>
+  <link rel="canonical" href="https://amp.dev/documentation/examples/components/amp-bodymovin-animation/index.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+
+  <!-- ## Basic Usage -->
+  <!-- AMP HTMLファイルにamp-bodymovin-animationタグを埋め込む。-->
+  <amp-bodymovin-animation
+    layout="fixed"
+    width="200" height="200"
+    src="/static/samples/json/bodymovin_red_circle.json">
+  </amp-bodymovin-animation>
+
+  <!-- ## Attributes -->
+  <!--
+    このセクションでは、bodymovinによって作成されたアニメーションをニーズに合わせてカスタマイズする方法について説明します。
+    * src - エクスポートされたBodymovinアニメーションオブジェクトへのパス。 httpsプロトコルでなければなりません。
+    * loop - アニメーションをループさせるかどうかを示します。デフォルトでは、この属性はtrueに設定されています。この属性の値は、true、false、または数値です。数値を指定した場合、アニメーションはその回数だけループします。
+    * noautoplay - デフォルトでは、アニメーションは自動再生されます。この属性が追加された場合、ビデオはアクションの再生が始まるのを待ちます。
+  -->
+
+  <!-- The following animation only loops five times. -->
+  <amp-bodymovin-animation
+    layout="responsive"
+    width="1920" height="1080"
+    src="/static/samples/json/bodymovin_happy_2016.json"
+    loop="5">
+  </amp-bodymovin-animation>
+
+</body>
+</html>
