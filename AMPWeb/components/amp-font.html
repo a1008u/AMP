@@ -1,8 +1,4 @@
-<!--
-  ## Introduction
-
-  Learn how to use the [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) component to trigger and monitor the loading of custom fonts on AMP pages.
--->
+<!-- ## Introduction [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) -->
 <!-- -->
 <!doctype html>
 <html ⚡>
@@ -10,16 +6,16 @@
   <meta charset="utf-8">
   <title>amp-font</title>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <!-- ## Setup -->
-  <!--
-    Import the `amp-font` component.
-  -->
+
+  <!-- ## Setup(amp-fontの追加) -->
   <script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
+
   <link rel="canonical" href="https://amp.dev/documentation/examples/components/amp-font/index.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <!--
-      Define custom CSS rules to style your document depending on whether a font was loaded successfully or not. Find out about all the supported css classes [here]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}).
+      フォントが正常にロードされたかどうかに応じて、ドキュメントをスタイルするためのカスタムCSSルールを定義します。
+      [here]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}).
     -->
     <style amp-custom>
     :root {
@@ -69,7 +65,9 @@
 <body>
   <!-- ## Existing font -->
   <!--
-    The [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md',locale=doc.locale).url.path}}) components needs to be embedded inside the body or the head. Use the attribute `timeout` to specify the time in milliseconds to wait until the font becomes available. This attribute is optional and it's default value is 3000. Use `on-error-remove-class`, `on-error-add-class`, `on-load-remove-class`, `on-load-add-class` to specify the CSS classes to be used if the font loads correctly or not. This sample demonstrates that `amp-font` will add the class `comicamp-loaded` to the root element if the font is downloaded.
+    アンプフォントコンポーネントは、本体または頭の中に埋め込む必要があります。フォントが使用可能になるまで待機する時間をミリ秒単位で指定するには、属性timeoutを使用します。
+    この属性はオプションで、デフォルト値は3000です。CSSクラスを指定するには、on-error-remove-class、on-error-add-class、on-load-remove-class、on-load-add-classを使用します。フォントが正しく読み込まれるかどうかにかかわらず使用されます。
+    [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md',locale=doc.locale).url.path}}) 
   -->
   <div>
     <amp-font
@@ -86,8 +84,7 @@
     </p>
   </div>
 
-  <!-- ## Unavailable font  -->
-  <!-- `amp-font` will add a class `unvailable-font-missing` to the root element in this sample. -->
+  <!-- ## Unavailable font(利用できないフォント：このサンプルのルート要素にクラスunvailable-font-missingを追加します。)  -->
   <div>
     <amp-font layout="nodisplay"
       font-family="UnavailableFont"
@@ -102,10 +99,7 @@
     </p>
   </div>
 
-  <!-- ## Using only cached fonts -->
-  <!--
-    Set `timeout="0"` to load the font only if already in cache.
-  -->
+  <!-- ## Using only cached fonts(すでにキャッシュに入っている場合にのみフォントをロードするには、timeout = "0"を設定します。) -->
   <div>
     <amp-font
       layout="nodisplay"

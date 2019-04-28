@@ -1,8 +1,4 @@
-<!-- ## Introduction -->
-<!--
-  [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) enables you to manage the size and fit of text within a given area.
--->
-<!-- -->
+<!-- ## Introduction(amp-fit-textを使用すると、特定の領域内のテキストのサイズとサイズを管理できます。[`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})) -->
 <!doctype html>
 <html ⚡>
   <head>
@@ -45,37 +41,28 @@
       </style>
   </head>
   <body>
-    <!-- ## Basic usage -->
-    <!--
-      In each of these examples, the `amp-fit-text` element is nested within a container with fixed dimensions to demonstrate the differences in attributes and layout values. When `amp-fit-text` is used with a given `height`, `width`, and `layout="responsive"` attribute, the text will scale to fit the parent container.
-    -->
+    <!-- ## Basic usage(これらの各例で、amp-fit-text要素は、属性とレイアウト値の違いを示すために、固定サイズのコンテナ内にネストされています。amp-fit-textが指定された高さ、幅、およびlayout = "レスポンシブ"属性で使用されると、テキストは親コンテナに合わせて拡大縮小されます。) -->
     <div>
       <div class="square-small"><amp-fit-text width="1" height="1" layout="responsive">Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis reprehendunt.</amp-fit-text></div>
       <div class="square-medium"><amp-fit-text width="1" height="1" layout="responsive">Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis reprehendunt.</amp-fit-text></div>
       <div class="square-large"><amp-fit-text width="1" height="1" layout="responsive">Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis reprehendunt.</amp-fit-text></div>
     </div>
-    <!-- ## Aspect ratio -->
-    <!--
-      The text will scale responsively in the ratio defined by the responsive layout, but not exceed the size of its parent. This sample defines an aspect ratio of 1.5:1 (3:2).
-    -->
+
+    <!-- ## Aspect ratio(テキストはレスポンシブレイアウトで定義された比率でレスポンシブに拡大または縮小されますが、その親のサイズを超えることはありません。) -->
     <div>
       <div class="square-small"><amp-fit-text width="300" height="200" layout="responsive">Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis reprehendunt.</amp-fit-text></div>
       <div class="square-medium"><amp-fit-text width="300" height="200" layout="responsive">Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis reprehendunt.</amp-fit-text></div>
       <div class="square-large"><amp-fit-text width="300" height="200" layout="responsive">Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis reprehendunt.</amp-fit-text></div>
     </div>
-    <!-- ## min-font-size -->
-    <!--
-      The `min-font-size` attribute dictates a minimum size for the text.  In this case, we've dictated a minimum of 30, which will cause it to exceed the size of its fixed block parent and be truncated to fit as appropriate.
-    -->
+
+    <!-- ## min-font-size(min-font-size属性は、テキストの最小サイズを決定します。固定ブロックの親のサイズを超えた場合は、適切に収まるように切り捨てられます。) -->
     <div>
       <div class="square-small"><amp-fit-text width="200" height="200" layout="responsive" min-font-size="18">Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis reprehendunt.</amp-fit-text></div>
       <div class="square-medium"><amp-fit-text width="200" height="200" layout="responsive" min-font-size="18">Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis reprehendunt.</amp-fit-text></div>
       <div class="square-large"><amp-fit-text width="200" height="200" layout="responsive" min-font-size="18">Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis reprehendunt.</amp-fit-text></div>
     </div>
-    <!-- ## max-font-size -->
-    <!--
-      The `max-font-size` attribute dictates a maximum size for the text.  In this case, we've dictated a maximum of 10, ensuring it won't fill the size of its parent element.
-    -->
+
+    <!-- ## max-font-size(max-font-size属性は、テキストの最大サイズを決定します。この場合は、最大18個を指定して、親要素のサイズを超えないようにしています。) -->
     <div>
       <div class="square-small"><amp-fit-text width="200" height="200" layout="responsive" max-font-size="18">Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis reprehendunt.</amp-fit-text></div>
       <div class="square-medium"><amp-fit-text width="200" height="200" layout="responsive" max-font-size="18">Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis reprehendunt.</amp-fit-text></div>

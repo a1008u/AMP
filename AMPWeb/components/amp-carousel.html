@@ -1,6 +1,5 @@
 <!--
-  ## Introduction
-
+  ## Introduction(amp-carouselコンポーネントを使用すると、水平軸に沿って複数の類似コンテンツを表示できます。)
   The [amp-carousel]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) component allows displaying multiple similar pieces of content along a horizontal axis.
 -->
 <!-- -->
@@ -42,41 +41,35 @@
 </head>
 <body>
 
-  <!-- ## Basic Usage -->
-  <!-- Use `type="carousel"` to display a list of images as a continuous strip. -->
+  <!-- ## Basic Usage(連続したストリップとしてイメージのリストを表示するには、type = "carousel"を使用してください。) -->
   <amp-carousel height="300" layout="fixed-height" type="carousel">
     <amp-img src="/static/samples/img/image1.jpg" width="400" height="300" alt="a sample image"></amp-img>
     <amp-img src="/static/samples/img/image2.jpg" width="400" height="300" alt="another sample image"></amp-img>
     <amp-img src="/static/samples/img/image3.jpg" width="400" height="300" alt="and another sample image"></amp-img>
   </amp-carousel>
 
-  <!-- ## Slides -->
-  <!-- Use `type="slides"` to display a list of images as slides. -->
+  <!-- ## Slides(スライドとして画像のリストを表示するには、type = "slides"を使用します) -->
   <amp-carousel width="400" height="300" layout="responsive" type="slides">
     <amp-img src="/static/samples/img/image1.jpg" width="400" height="300" layout="responsive" alt="a sample image"></amp-img>
     <amp-img src="/static/samples/img/image2.jpg" width="400" height="300" layout="responsive" alt="another sample image"></amp-img>
     <amp-img src="/static/samples/img/image3.jpg" width="400" height="300" layout="responsive" alt="and another sample image"></amp-img>
   </amp-carousel>
 
-  <!-- ## Autoplay -->
-  <!-- The `autoplay` attribute (type=slides only) advances the slide to the next slide without user interaction, by default it will advance a slide in 5000 millisecond intervals (5 seconds) and can be overridden by the `delay` attribute.  -->
+  <!-- ## Autoplay(自動再生属性（type =スライドのみ）は、ユーザーの操作なしでスライドを次のスライドに進めます。デフォルトでは、スライドは5000ミリ秒間隔（5秒）で進み、delay属性で上書きできます。) -->
   <amp-carousel width="400" height="300" layout="responsive" type="slides" autoplay delay="2000">
     <amp-img src="/static/samples/img/image1.jpg" width="400" height="300" layout="responsive" alt="a sample image"></amp-img>
     <amp-img src="/static/samples/img/image2.jpg" width="400" height="300" layout="responsive" alt="another sample image"></amp-img>
     <amp-img src="/static/samples/img/image3.jpg" width="400" height="300" layout="responsive" alt="and another sample image"></amp-img>
   </amp-carousel>
 
-  <!-- ## Buttons -->
-  <!-- By default, carousel buttons use inlined SVGs as background-images.
-    You may override these with your own SVGs or images by using `.amp-carousel-button-prev` and `.amp-carousel-button-next` classes. -->
+  <!-- ## Buttons(デフォルトでは、カルーセルボタンはインラインSVGを背景画像として使用します。 あなたは.amp-carousel-button-prevと.amp-carousel-button-nextクラスを使うことによってあなた自身のSVGか画像でこれらを上書きすることができます。) -->
   <amp-carousel id="custom-button" width="400" height="300" layout="responsive" type="slides" autoplay delay="2000">
     <amp-img src="/static/samples/img/image1.jpg" width="400" height="300" layout="responsive" alt="a sample image"></amp-img>
     <amp-img src="/static/samples/img/image2.jpg" width="400" height="300" layout="responsive" alt="another sample image"></amp-img>
     <amp-img src="/static/samples/img/image3.jpg" width="400" height="300" layout="responsive" alt="and another sample image"></amp-img>
   </amp-carousel>
 
-  <!-- ## Supported Contents  -->
-  <!-- Each of these nodes may also have arbitrary HTML children.  -->
+  <!-- ## Supported Contents(これらの各ノードには、任意のHTMLの子もあります。)  -->
   <amp-carousel height="300" layout="fixed-height" type="slides">
     <div>
       <div class="blue-box">
